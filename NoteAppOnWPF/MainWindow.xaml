@@ -1,0 +1,36 @@
+﻿<Window x:Class="NoteAppOnWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NoteAppOnWPF"
+        mc:Ignorable="d"
+        Title="NoteApp" Height="450" Width="800" MinHeight="450" MinWidth="800">
+    <DockPanel>
+
+        <Menu DockPanel.Dock="Top" Height="20" VerticalAlignment="Top" >
+            <MenuItem x:Name="CreateButton" Header="Create new note" Click="CreateButton_Click"></MenuItem>
+        </Menu>
+        
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" FlowDirection="RightToLeft">
+            <Button x:Name="DeleteButton" Click="DeleteButton_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="30 0 30 30" Width="100" Height="30" Content="Delete"/>
+            <Button x:Name="SaveButton" Click="SaveButton_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 0 30 30" Width="100" Height="30" Content="Save"/>
+        </StackPanel>
+
+        <ScrollViewer DockPanel.Dock="Right" Margin="0 10 10 25" Width="250" Background="Gray" Padding="1">
+            <StackPanel x:Name="NoteList" Orientation="Vertical">
+                <Label Content="Title, last modify time" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" Background="White" VerticalAlignment="Top"/>
+            </StackPanel>
+        </ScrollViewer>
+
+        <DockPanel DockPanel.Dock="Left" Margin="10 10 25 25">
+            <DockPanel  DockPanel.Dock="Top" Margin="0 0 0 5">
+                <Label DockPanel.Dock="Left" Width="45" Content="Title:"/>
+                <TextBox x:Name="NoteTitle"/>
+            </DockPanel>
+
+            <TextBox x:Name="NoteText" AcceptsReturn="True"/>
+        </DockPanel>
+
+    </DockPanel>
+</Window>
